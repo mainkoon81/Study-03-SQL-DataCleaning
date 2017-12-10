@@ -1,16 +1,16 @@
 # Study-SQL-DataCleaning
 
-## Clean and re-structure messy data.
-## Convert columns to different data types.
-## Tricks for manipulating NULLs.
-*Left( )……beginning???
-*Right( )………ending???
-*Length( ) 
-*POSITION( )
-*STRPOS( )
-*CONCAT( )
-*CAST( )
-*COALESCE( ) 
+### 1) Clean and re-structure messy data.
+### 2) Convert columns to different data types.
+### 3) Tricks for manipulating NULLs.
+ - *Left( )……beginning???
+ - *Right( )………ending???
+ - *Length( ) 
+ - *POSITION( )
+ - *STRPOS( )
+ - *CONCAT( )
+ - *CAST( )
+ - *COALESCE( ) 
 
 ## left( ) / right( ) / length( )
 phone_num: 000-000-0000
