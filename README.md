@@ -105,6 +105,30 @@ SELECT DATE_PART('month', TO_date(column, 'month')) AS "clean_month"
 
 #changed a month name into the number associated with that particular month (January=1)
 ```
+ - *CAST( )  or '::' : converting one datatype to another… change a string to a date. It changes lots of column types ( http://www.postgresqltutorial.com/postgresql-cast/ )..... CAST(some_column AS DATE)..... some_column :: DATE  
+```
+SELECT CAST('100' AS INTEGER)
+SELECT CAST('2015-01-01' AS DATE)    #result is… January 1st 2015
+SELECT CAST('01-OCT-2015' AS DATE)    #result is… October 1st 2015
+>SELECT '01-OCT-2015' :: DATE    #result is… October 1st 2015
+```
+ - > Q10. What is the correct format of dates in SQL? yyyy-mm-dd. Then change the date in a correct format, using substr( ) and concat( ) to perform this operation. Once you have created a column in the correct format, convert this to a date. 
+```
+SELECT *
+FROM sf_crime_data
+LIMIT 10
+
+SELECT date "orig_date", (SUBSTR(date, 7, 4) || '-' || LEFT(date, 2) || '-' || SUBSTR(date, 4, 2)) :: DATE "new_date"
+FROM sf_crime_data
+```
+### COALESCE(column, value) or IFNULL(column, value) 
+ - *coalesce( ) : returns the first non-NULL value passed for each row. If having a dataset that has some nulls that you’d prefer to contain actual values (for example with ‘0’),  COALESCE( ) replaces the null values. (https://community.modeanalytics.com/sql/tutorial/sql-string-functions-for-cleaning/ )..... SELECT coalesce(column, 0)
+ - *How many null values? 
+```
+SELECT count(column) AS "regular_count", count(ifnull(column, ‘no_value’)) AS "new_count"
+```
+
+
 
 
 
