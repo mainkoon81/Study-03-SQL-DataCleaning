@@ -1,4 +1,4 @@
-# Study-SQL-DataCleaning
+# SQL-DataCleaning
 
 ### 0. Basic
 Thinking about how different pieces of data relate to each other is at the heart of relational databases
